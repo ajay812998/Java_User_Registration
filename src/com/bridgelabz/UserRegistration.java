@@ -1,6 +1,5 @@
 package com.bridgelabz;
 
-
 import java.util.Scanner;
 
 public class UserRegistration {
@@ -18,6 +17,20 @@ public class UserRegistration {
 			System.out.println("Invalid First Name Try Again With Valid Name");
 			ValidateFirstName();
 		}
+
+	}
+
+	public void ValidateLastName() {
+		String expression = "^[A-Z][a-zA-Z]{2,}$";
+		System.out.println("Enter the Last Name");
+		String lastName = sc.next();
+
+		if (lastName.matches(expression)) {
+			System.out.println("Validation Success");
+		} else {
+			System.out.println("Try Again With Valid Last Name");
+			ValidateLastName();
+		}
 	}
 
 	public static void main(String[] args) {
@@ -25,5 +38,7 @@ public class UserRegistration {
 
 		UserRegistration user = new UserRegistration();
 		user.ValidateFirstName();
+		user.ValidateLastName();
 	}
 }
+
