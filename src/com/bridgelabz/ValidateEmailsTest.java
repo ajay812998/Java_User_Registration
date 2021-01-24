@@ -38,6 +38,9 @@ public class ValidateEmailsTest {
 
 	@Test
 	public void testUserEmail() {
+		try {
 		assertEquals(expectedResult, userEmail.validateEmail(email));
+		} catch (UserRegistrationException e) {
 	}
+  }
 }
